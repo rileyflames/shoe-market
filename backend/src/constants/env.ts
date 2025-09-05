@@ -29,3 +29,7 @@ export const MAIL_SECURE = getEnv('MAIL_SECURE')
 export const MAIL_POOL =getEnv('MAIL_POOL')
 export const BCRYPT_SALT_ROUNDS =getEnv('BCRYPT_SALT_ROUNDS', '12')
 export const OTP_EXPIRES_IN =getEnv('OTP_EXPIRES_IN', '15')
+export const CORS_ORIGIN = getEnv('CORS_ORIGIN')
+
+
+
