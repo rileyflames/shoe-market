@@ -4,9 +4,10 @@ import helmet from 'helmet'
 import hpp from 'hpp'
 import cors from 'cors'
 import compression from 'compression'
-import routeNotFound from './utils/notFound.js'
+import routeNotFound from './utils/notFound'
 import cookieParser from 'cookie-parser'
-import { CORS_ORIGIN, NODE_ENV } from './constants/env.js'
+import { CORS_ORIGIN, NODE_ENV } from './constants/env'
+import errorHandler from './middleware/errorHandler'
 
 
 const app: Application = express()
@@ -43,5 +44,7 @@ app.get('/', (req, res) => {
 
 app.use(routeNotFound)
 
+
+app.use(errorHandler)
 
 export default app

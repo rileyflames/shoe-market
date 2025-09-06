@@ -1,10 +1,9 @@
 import mongoose from 'mongoose'
-import { DB_NAME, MONGO_URI } from "../constants/env.js";
-import logger from '../utils/logger.js';
+import { DB_NAME, MONGO_URI } from "../constants/env";
+import logger from '../utils/logger';
 
 
 export const connectDB = async ():Promise<void> => {
-
     const maxRetries: number = 5;
     let attempt: number = 0;
     let delay: number = 1000;
@@ -15,7 +14,7 @@ export const connectDB = async ():Promise<void> => {
                 dbName: DB_NAME
             })
             logger.info(`✅ Connected to MongoDB.....`)
-
+            return; // <-- Add this to exit after successful connection
         }catch(error) {
             attempt++;
             logger.error(`MongoDB connection error ( Attempt: ${attempt}) `, error)

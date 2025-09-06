@@ -1,10 +1,10 @@
 import 'dotenv/config'
 
 import http from 'http'
-import app from './src/app.js'
-import { connectDB, gracefulShutdown } from './src/config/db.js'
-import logger from './src/utils/logger.js'
-import { CORS_ORIGIN, NODE_ENV, PORT } from './src/constants/env.js'
+import app from './src/app'
+import { connectDB, gracefulShutdown } from './src/config/db'
+import logger from './src/utils/logger'
+import { CORS_ORIGIN, NODE_ENV, PORT } from './src/constants/env'
 
 
 const server = http.createServer(app)
